@@ -5,8 +5,7 @@ const proyectoController = require('../controllers/proyectoControllers.js');
 
 module.exports = function () {
   router.get('/', proyectoController.proyectoHome);
-  router.get('/1', (req, res) => {
-    res.send('estas en 1');
-  });
+  router.get('/nuevo-proyecto', proyectoController.formularioProyecto);
+  router.post('/nuevo-proyecto', proyectoController.nuevoProyecto);
   return router;
 };
