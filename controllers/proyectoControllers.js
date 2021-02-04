@@ -14,10 +14,10 @@ exports.nuevoProyecto = (req, res) => {
   if (!nombre) {
     errores.push({ texto: 'Agrega un nombre al proyecto' });
   }
-  if (errores.lenght > 0) {
+  if (errores.length > 0) {
     res.render('nuevoProyecto', {
       nombrePagina: 'Nuevo Proyecto',
-      errores: 'a',
+      errores,
     });
   }
 };
