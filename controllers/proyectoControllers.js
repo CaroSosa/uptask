@@ -1,3 +1,5 @@
+const Proyectos = require('../models/Proyectos');
+const slug = require('slug');
 exports.proyectoHome = (req, res) => {
   res.render('index', {
     nombrePagina: 'Proyectos',
@@ -19,5 +21,11 @@ exports.nuevoProyecto = (req, res) => {
       nombrePagina: 'Nuevo Proyecto',
       errores,
     });
+  } else {
+    const url = slug(nombre).toLowerCase();
+    console.log(url);
+    Proyectos.create({ nombre, url })
+      .then(() => console.log('Insertado correctamente'))
+      .catch((err) => console.log(err));
   }
 };
