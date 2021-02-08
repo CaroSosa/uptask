@@ -10,20 +10,17 @@ html(lang="en")
         header.barra
             h1 UpTask - Administrador de proyectos
             a(href="#") Cerrar sesión
-        main.contenedor
+        main.contenedor 
             aside.contenedor-proyectos
                 .panel.crear-proyecto
                     a(href="/nuevo-proyecto" class="boton span") Nuevo Proyecto + 
                 .panel.lista-proyectos  
                     h2 Proyectos
                     ul#proyectos.proyectos
-                        li
-                            a(href="#") Diseño de Tienda virtual
-                        li
-                            a(href="#") Otro boton
-                        li
-                            a(href="#") Otro más
-
+                        if(ListaProyectos.length)
+                            each proyecto in ListaProyectos      
+                                li  
+                                    a(href=`/proyectos/${proyecto.url}`)= proyecto.nombre 
+            
             block content
             
-        

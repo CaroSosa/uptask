@@ -1,0 +1,17 @@
+extends layout 
+
+block content 
+    .contenido-principal 
+        h1 #{nombrePagina} - #{infoProyecto.nombre}
+
+
+
+
+        //TODO-- Formulario 
+
+        //TODO-- Listado de pendientes
+
+        //Acciones que se pueden realizar
+        .contenedor-acciones 
+            a(href=`/proyectos/editar/${infoProyecto.id}` class="boton") Editar Proyecto 
+            button#eliminar-proyecto(type="button" class="boton eliminar") Eliminar
