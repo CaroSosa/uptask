@@ -9,6 +9,8 @@ const db = require('./config/db');
 const { nextTick } = require('process');
 
 require('./models/Proyectos');
+require('./models/Tareas');
+require('./models/Usuarios');
 
 db.sync()
   .then(() => console.log('Conectado al servidor'))
