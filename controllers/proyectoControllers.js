@@ -3,39 +3,52 @@ const Tareas = require('../models/Tareas');
 const slug = require('slug');
 
 const proyectoHome = async (req, res) => {
-  const ListaProyectos = await Proyectos.findAll();
+  const { id } = res.locals.usuario;
+  const ListaProyectos = await Proyectos.findAll({
+    where: { usuarioId: id },
+  });
+
   res.render('index', {
     nombrePagina: 'Proyectos',
     ListaProyectos,
   });
 };
 const formularioProyecto = async (req, res) => {
-  const ListaProyectos = await Proyectos.findAll();
+  const { id } = res.locals.usuario;
+  const ListaProyectos = await Proyectos.findAll({
+    where: { usuarioId: id },
+  });
   res.render('nuevoProyecto', {
     nombrePagina: 'Nuevo Proyecto',
     ListaProyectos,
   });
 };
 const nuevoProyecto = async (req, res) => {
+  const { id } = res.locals.usuario;
   const { nombre } = req.body;
   let errores = [];
   if (!nombre) {
     errores.push({ texto: 'Agrega un nombre al proyecto' });
   }
   if (errores.length > 0) {
-    const ListaProyectos = await Proyectos.findAll();
+    const ListaProyectos = await Proyectos.findAll({
+      where: { usuarioId: id },
+    });
     res.render('nuevoProyecto', {
       nombrePagina: 'Nuevo Proyecto',
       ListaProyectos,
       errores,
     });
   } else {
-    const proyecto = await Proyectos.create({ nombre });
+    const proyecto = await Proyectos.create({ nombre, usuarioId: id });
     res.redirect('/');
   }
 };
 const proyectoPorUrl = async (req, res, next) => {
-  const ListaProyectos = await Proyectos.findAll();
+  const { id } = res.locals.usuario;
+  const ListaProyectos = await Proyectos.findAll({
+    where: { usuarioId: id },
+  });
   const infoProyecto = await Proyectos.findOne({
     where: {
       url: req.params.url,
@@ -55,7 +68,10 @@ const proyectoPorUrl = async (req, res, next) => {
   });
 };
 const formularioEditar = async (req, res) => {
-  const ListaProyectos = await Proyectos.findAll();
+  const { id } = res.locals.usuario;
+  const ListaProyectos = await Proyectos.findAll({
+    where: { usuarioId: id },
+  });
   const proyectoEditar = await Proyectos.findOne({
     where: {
       id: req.params.id,
@@ -74,7 +90,10 @@ const actualizarProyecto = async (req, res) => {
     errores.push({ texto: 'Agrega un nombre al proyecto' });
   }
   if (errores.length > 0) {
-    const ListaProyectos = await Proyectos.findAll();
+    const { id } = res.locals.usuario;
+    const ListaProyectos = await Proyectos.findAll({
+      where: { usuarioId: id },
+    });
     res.render('nuevoProyecto', {
       nombrePagina: 'Nuevo Proyecto',
       ListaProyectos,

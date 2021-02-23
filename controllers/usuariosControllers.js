@@ -27,7 +27,22 @@ const crearCuenta = async (req, res) => {
     });
   }
 };
+const formIniciarSesion = async (req, res) => {
+  const { error } = res.locals.mensajes;
+  res.render('iniciarSesion', {
+    nombrePagina: 'Iniciar sesion en UpTask',
+    error,
+  });
+};
+
+const reestablecerPassword = (req, res) => {
+  res.render('reestablecer', {
+    nombrePagina: 'Reestablecer tu contraseña',
+  });
+};
 module.exports = {
   formCrearCuenta,
   crearCuenta,
+  formIniciarSesion,
+  reestablecerPassword,
 };

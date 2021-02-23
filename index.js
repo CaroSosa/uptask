@@ -7,6 +7,7 @@ const { body, validationResult } = require('express-validator');
 const flash = require('connect-flash');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const passport = require('./config/passport');
 
 //Crear la conexión a la base de datos
 const db = require('./config/db');
@@ -42,11 +43,14 @@ server.use(
     saveUninitialized: false,
   })
 );
+server.use(passport.initialize());
+server.use(passport.session());
 
 //Pasar var dump a la app
 server.use((req, res, next) => {
   res.locals.vardump = helpers.vardump;
   res.locals.mensajes = req.flash();
+  res.locals.usuario = { ...req.user } || null;
   next();
 });
 
