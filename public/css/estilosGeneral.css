@@ -1,0 +1,237 @@
+html {
+  overflow-y: auto; }
+
+body {
+  background-color: #fcf8e8;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  padding-right: 0 !important; }
+
+.contenedor-formulario {
+  position: absolute;
+  height: 40vh;
+  width: 40vw;
+  display: grid; }
+  .contenedor-formulario h1 {
+    letter-spacing: 0.2em;
+    text-align: center; }
+  .contenedor-formulario p {
+    text-align: center;
+    color: #000000;
+    font-size: 1.4rem; }
+  .contenedor-formulario .caja-login {
+    position: relative;
+    background-color: #d4e2d4;
+    height: 30vh;
+    border-radius: 0.5rem;
+    display: grid; }
+
+.campo {
+  position: relative;
+  top: 15px;
+  text-align: center;
+  padding: 0.5rem; }
+  .campo input {
+    height: 3rem;
+    width: 20vw;
+    flex: 1;
+    border: 1px solid #3d443d;
+    border-radius: 5rem;
+    padding-left: 2rem;
+    color: #000000; }
+
+.acciones {
+  position: relative;
+  top: 20%;
+  display: flex;
+  justify-content: space-around; }
+  .acciones a {
+    color: #000000;
+    text-decoration-line: none;
+    justify-content: space-between; }
+
+.boton,
+.enviar {
+  position: relative;
+  top: 10%;
+  text-align: right;
+  color: #000000; }
+  .boton input,
+  .enviar input {
+    position: relative;
+    right: 4vw;
+    height: 40px;
+    background-color: transparent;
+    border-style: none;
+    border-radius: 0.5rem; }
+    .boton input:hover,
+    .enviar input:hover {
+      background-color: #b0d1b0;
+      transition: background 0.8s ease; }
+    .boton input:active,
+    .enviar input:active {
+      border-style: solid; }
+
+.barra {
+  position: absolute;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  background-color: #ecb390;
+  padding: 1rem;
+  align-items: center;
+  display: flex;
+  justify-content: space-around; }
+  .barra a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    float: right; }
+
+.contenedor-proyectos {
+  position: absolute;
+  top: 92px;
+  left: 0;
+  height: 100%;
+  width: 22%;
+  background-color: #d4e2d4;
+  padding-top: 1rem; }
+  .contenedor-proyectos a {
+    text-decoration: none;
+    color: #000000; }
+  .contenedor-proyectos .nuevo-proyecto {
+    position: absolute;
+    height: 3.5vh;
+    width: 20vw;
+    background-color: #dd806b;
+    border-radius: 0.5rem;
+    top: 10vh;
+    left: 0.8vw;
+    text-align: center;
+    font-size: x-large; }
+  .contenedor-proyectos h2 {
+    position: relative;
+    top: 15vh;
+    left: 5vw;
+    font-size: xx-large; }
+  .contenedor-proyectos .lista-proyectos ul {
+    list-style: none;
+    padding: 1.5rem 0 0 0;
+    margin: 0;
+    position: relative;
+    top: 12vh;
+    left: 5vw; }
+    .contenedor-proyectos .lista-proyectos ul li {
+      margin-bottom: 1rem;
+      font-size: larger; }
+      .contenedor-proyectos .lista-proyectos ul li a:hover {
+        color: #c06f5d; }
+
+.contenido-principal h1 {
+  position: absolute;
+  top: 10vh;
+  left: 47vw;
+  font-size: 1.8rem; }
+.contenido-principal .agregar-tarea {
+  position: relative;
+  left: 10vw;
+  width: 40vw;
+  height: 20vh;
+  background-color: #d4e2d4;
+  display: grid;
+  border-radius: 1rem; }
+  .contenido-principal .agregar-tarea .boton {
+    width: 10vw;
+    text-align: left; }
+.contenido-principal .listado-pendientes {
+  position: relative;
+  left: 9.5vw;
+  text-align: center;
+  font-size: large; }
+  .contenido-principal .listado-pendientes .completo {
+    color: #00b762; }
+  .contenido-principal .listado-pendientes ul {
+    padding: 0;
+    list-style: none; }
+    .contenido-principal .listado-pendientes ul li {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      font-size: 1.4rem;
+      border-bottom: 1px solid #d1d1d1; }
+      .contenido-principal .listado-pendientes ul li :last-of-type {
+        border-bottom: none; }
+  .contenido-principal .listado-pendientes .error {
+    color: #ecb390 !important;
+    background-color: #ffc9c9;
+    border: 1px solid red; }
+  .contenido-principal .listado-pendientes .correcto {
+    color: #000000;
+    background-color: #b0d1b0;
+    border: 1px solid #526452; }
+
+.alerta {
+  padding: 0.5rem;
+  text-align: center;
+  font-size: larger; }
+
+.avance {
+  position: relative;
+  top: 5vh;
+  left: 10vw; }
+  .avance .barra-avance {
+    height: 30px;
+    border: 1px solid #999;
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto; }
+    .avance .barra-avance .porcentaje {
+      width: 0%;
+      height: 100%;
+      background-color: #00b762;
+      background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+      background-size: 1rem 1rem;
+      transition: width 0.3s ease; }
+
+.contenedor-acciones {
+  position: relative;
+  top: 5vh;
+  left: 10vw;
+  max-width: 800px;
+  margin: 2rem auto 0 auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-between; }
+  .contenedor-acciones a {
+    text-decoration: none;
+    font-size: large; }
+  .contenedor-acciones .boton {
+    height: 3vh;
+    width: 15vw;
+    border: 0;
+    background-color: transparent;
+    font-size: larger;
+    text-align: center;
+    border-radius: 0.5rem; }
+    .contenedor-acciones .boton:hover {
+      background-color: #d4e2d4;
+      transition: background 0.8s ease; }
+
+.agregar-proyecto {
+  max-width: 800px;
+  width: 90%;
+  background-color: #ecb390;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #000;
+  transition: background-color 0.5s ease-in-out;
+  border-radius: 0.5rem; }
+  .agregar-proyecto .boton {
+    position: relative;
+    top: 2vh; }
+
+/*# sourceMappingURL=estilosGeneral.css.map */

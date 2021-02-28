@@ -3,7 +3,6 @@ extends layout
 block content 
     .contenido-principal 
         h1 #{nombrePagina} - #{infoProyecto.nombre}
-
         form.agregar-tarea(action=`/proyectos/${infoProyecto.url}` method="POST")
             .campo 
                 label(for="tarea") Tarea: 
@@ -21,12 +20,12 @@ block content
                                 i.far.fa-check-circle.completo
                             else 
                                 i.far.fa-check-circle
-                            i.fas.fa-trash 
+                                i.fas.fa-trash 
                 else 
                     p No hay tareas en este proyecto
         .avance 
             h2 Avance del proyecto 
-            #barra-avance.barra-avance 
+            #barra-avance.barra-avance  
                 #porcentaje.porcentaje 
         //Acciones que se pueden realizar
         .contenedor-acciones 

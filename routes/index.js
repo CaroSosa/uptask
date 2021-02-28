@@ -70,5 +70,6 @@ module.exports = function () {
   router.post('/reestablecer', authController.enviarToken);
   router.get('/reestablecer/:token', authController.validarToken);
   router.post('/reestablecer/:token', authController.actualizarPassword);
+  router.get('/confirmar/:email', usuariosController.confirmarCuenta);
   return router;
 };

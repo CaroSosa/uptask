@@ -1,0 +1,21 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+h2 {
+  font-size: 3rem;
+  text-align: center;
+}
+a {
+  margin-top: 2rem;
+  text-align: center;
+  display: block;
+  padding: 1.5rem 0;
+  color: black;
+  background-color: darkgrey;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+p {
+  line-height: 2;
+}

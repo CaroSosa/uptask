@@ -8,6 +8,7 @@ const flash = require('connect-flash');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('./config/passport');
+require('dotenv').config({ path: 'variables.env' });
 
 //Crear la conexión a la base de datos
 const db = require('./config/db');
@@ -57,5 +58,11 @@ server.use((req, res, next) => {
 //Añadir carpeta de las vistas
 server.set('views', path.join(__dirname, 'views'));
 
-server.listen(3000);
 server.use('/', routes());
+
+const host = process.env.HOST || '0.0.0.0';
+const port = process.env.PORT || 3000;
+
+server.listen(port, host, () => {
+  console.log('El servidor está funcionando');
+});
